@@ -155,7 +155,6 @@
             justify-content: center;
             margin-top: 50px;
             align-items: center;
-    overflow-x: auto;
     white-space: nowrap; /* Prevent images from wrapping to next line */
 }
 
@@ -305,10 +304,14 @@ svg {
 		.about-section h2 {
 	            font-size: 50px;
 	        }
-		.about-section p {
-            	width: 100%;
-            font-size: 20px;
-        }
+		
+    /* Adjustments for mobile view */
+    .about-section p {
+        font-size: 16px; /* Decrease font size for better readability on smaller screens */
+        margin: 10px; /* Simplify margin for better spacing */
+    }
+
+        
 
 		svg {
 	height: 100%;
@@ -1546,6 +1549,5 @@ function toggleMenu() {
         }
 
         </script>
-    </div>
 </body>
 </html>
