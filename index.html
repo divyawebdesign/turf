@@ -296,28 +296,36 @@ svg {
         .faq-item.active .arrow {
             transform: rotate(180deg);
         }
-	@media only screen and (max-width: 600px){
-		.main-heading span {
-			margin-top: 180px;
-		    font-size: 53px;
-		}
-		.about-section h2 {
-	            font-size: 50px;
-	        }
-		
-    /* Adjustments for mobile view */
-    .about-section p {
-	    margin-bottom: 50px;
-        font-size: 16px; /* Decrease font size for better readability on smaller screens */
-       text-align:center; /* Simplify margin for better spacing */
+	/* Adjustments for mobile view */
+@media only screen and (max-width: 600px) {
+    .main-heading span {
+        margin-top: 200px;
+        font-size: 53px;
     }
-
-        
-
-		svg {
-	height: 100%;
-	width: 95%;
-	
+    .about-section h2 {
+        font-size: 50px;
+    }
+    .about-container {
+        margin-bottom: 50px; /* Add space between the image scroller and the "About Us" section */
+    }
+    .about-section p {
+        font-size: 16px;
+        margin: 10px;
+        float: none; /* Remove float for center alignment */
+        width: auto; /* Reset width for center alignment */
+        margin-right: 20px; /* Adjust margin */
+        margin-left: 20px; /* Adjust margin */
+    }
+    .image-scroll-container {
+        margin-top: 50px;
+    }
+    .image-container img {
+        width: 200px; /* Adjust image size for mobile */
+        height: 200px; /* Adjust image size for mobile */
+    }
+	svg{
+		width:95%;
+	}
 }
 
 	}
