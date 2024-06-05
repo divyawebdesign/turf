@@ -318,43 +318,30 @@ svg {
     }
     .image-scroll-container {
         margin-top: 50px;
+        overflow-x: auto; /* Enable horizontal scrolling on small screens */
+    }
+    .image-container {
+        white-space: nowrap; /* Prevent images from wrapping to the next line */
     }
     .image-container img {
-        width: 400px; /* Adjust image size for mobile */
+        width: 300px; /* Adjust image size for mobile */
         height: 400px; /* Adjust image size for mobile */
+        margin: 0 10px; /* Adjust spacing between images */
     }
-	.image-scroll-container h2{
-            font-size: 30px;
-            margin-bottom: 20px;
-           
-}
-	image-scroll-container::-webkit-scrollbar {
-    width: 12px;
-    margin: 10px 0; /* Vertical margins to reduce the track length */
-    margin-left: 20px; /* Width of the entire scrollbar */
-}
+    /* Style for the scrollbar */
+    .image-scroll-container::-webkit-scrollbar {
+        width: 10px; /* Adjust the width of the scrollbar */
+    }
 
-/* Track */
-.image-scroll-container::-webkit-scrollbar-track {
-     /* Color of the track */
-    border-radius: 10px; /* Rounded corners of the track */
-}
+    .image-scroll-container::-webkit-scrollbar-thumb {
+        background: #888; /* Color of the scrollbar thumb */
+        border-radius: 5px; /* Roundness of the thumb */
+    }
 
-/* Handle */
-.image-scroll-container::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #ff6b6b, #cfedee); /* Color of the scrollbar handle */
-    border-radius: 10px; /* Rounded corners of the handle */
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /* Inner shadow for handle */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-    
-}
-
-/* Handle on hover */
-.image-scroll-container::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(45deg,#cfedee, #ff6b6b); /* Color of the handle when hovered */
-    box-shadow: inset 0 0 10px rgba(238, 228, 228, 0.5); /* Stronger inner shadow on hover */
-}
-
+    .image-scroll-container::-webkit-scrollbar-track {
+        background: #eee; /* Color of the scrollbar track */
+        border-radius: 5px; /* Roundness of the track */
+    }
 	svg{
 		width:95%;
 	}
@@ -366,7 +353,6 @@ svg {
 }
 }
 
-	}
     </style>
     <script>
         function toggleFAQ(element) {
