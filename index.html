@@ -326,8 +326,8 @@ svg {
     }
 
 .image-scroll-container h2 {
-	word-wrap: break-word;
-        font-size: 40px; /* Adjust font size for mobile */
+	position:fixed;
+        font-size: 30px; /* Adjust font size for mobile */
         margin-left: 20px; /* Adjust margin for mobile */
         margin-bottom: 10px; /* Adjust margin for mobile */
     }
@@ -337,20 +337,33 @@ svg {
         height: 400px; /* Adjust image size for mobile */
         margin: 0 10px; /* Adjust spacing between images */
     }
-    /* Style for the scrollbar */
     .image-scroll-container::-webkit-scrollbar {
-        width: 5px; /* Adjust the width of the scrollbar */
-    }
+    width: 12px;
+    margin: 10px 0; /* Vertical margins to reduce the track length */
+    margin-left: 20px; /* Width of the entire scrollbar */
+}
 
-    .image-scroll-container::-webkit-scrollbar-thumb {
-        background: #888; /* Color of the scrollbar thumb */
-        border-radius: 5px; /* Roundness of the thumb */
-    }
+/* Track */
+.image-scroll-container::-webkit-scrollbar-track {
+     /* Color of the track */
+    border-radius: 5px; /* Rounded corners of the track */
+}
 
-    .image-scroll-container::-webkit-scrollbar-track {
-        background: #eee; /* Color of the scrollbar track */
-        border-radius: 5px; /* Roundness of the track */
-    }
+/* Handle */
+.image-scroll-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff6b6b, #cfedee); /* Color of the scrollbar handle */
+    border-radius: 5px; /* Rounded corners of the handle */
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /* Inner shadow for handle */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    
+}
+
+/* Handle on hover */
+.image-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg,#cfedee, #ff6b6b); /* Color of the handle when hovered */
+    box-shadow: inset 0 0 10px rgba(238, 228, 228, 0.5); /* Stronger inner shadow on hover */
+}
+
 	svg{
 		width:95%;
 	}
