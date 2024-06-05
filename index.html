@@ -301,15 +301,18 @@ svg {
         .faq-item.active .arrow {
             transform: rotate(180deg);
         }
-
+	@media only screen and (max-width: 600px){
+		.main-heading {
+    			font-size: 30px;
+		}
+		
+	}
     </style>
     <script>
         function toggleFAQ(element) {
             element.classList.toggle('active');
         }
     </script>
-
-    </style>
 </head>
 <body>
   <button class="menu-button" id="menuButton" onclick="toggleMenu()">☰</button>
