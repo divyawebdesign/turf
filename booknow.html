@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Book Turf</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: black;
+        }
+        .menu-button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 35px;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+            transition: background-color 0.3s;
+        }
+        .menu-button:hover {
+            background-color: #555;
+        }
+        .navbar {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: black;
+            padding-top: 60px;
+            z-index: 0;
+        }
+        .navbar a {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s;
+            font-size: 25px;
+        }
+        .navbar a:hover {
+            background-color: #e40d0d;
+            color: rgb(241, 232, 232);
+        }
+
+        .show {
+            display: flex;
+        }
+
+        .contact-details {
+            position: absolute;
+            bottom: 50px;
+            left: 10px;
+            color: white;
+            font-size: 30px;
+            display: flex;
+        }
+
+        .contact-details p {
+            margin-right: 10px;
+            margin-left: 5px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .contact-details p:hover .fa-envelope {
+            color: #d44638;
+        }
+        .contact-details p:hover .fa-phone {
+            color: #25d366;
+            transform: rotateY(180deg);
+        }
+        .contact-details p:hover .fa-whatsapp {
+            color: #25d366;
+        }
+        .contact-details p:hover .fa-facebook {
+            color: #3b5998;
+        }
+        .book{
+            color: white;
+            text-align: center;
+        }
+        .book h2{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: red;
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+        .book h2:hover{
+        /* Underline the text when hovered */
+            color: white; /* Change text color to white when hovered */
+            text-shadow: 0 0 10px rgb(73, 183, 234), 0 0 10px rgb(195, 236, 255), 0 0 10px rgb(195, 236, 255); 
+        }
+        .book p{
+            font-size: 50px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';
+        }
+
+        @import url("https://fonts.googleapis.com/css?family=Raleway");
+
+:root {
+  --glow-color: hsl(0, 78%, 50%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+        .glowing-btn {
+  position: relative;
+  color: var(--glow-color);
+  cursor: pointer;
+  padding: 0.35em 1em;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 0.45em;
+  background: none;
+  perspective: 2em;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2em;
+  font-weight: 900;
+  letter-spacing: 0.5em;
+            margin-right: 15px;
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 2s linear infinite;
+}
+
+.glowing-txt {
+  float: left;
+  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  animation: text-flicker 3s linear infinite;
+}
+
+.faulty-letter {
+  opacity: 0.5;
+  animation: faulty-flicker 2s linear infinite;
+}
+
+.glowing-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  filter: blur(1em);
+  transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+  background: var(--glow-color);
+  pointer-events: none;
+}
+
+.glowing-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 2em 0.2em var(--glow-color);
+  transition: opacity 100ms linear;
+}
+
+.glowing-btn:hover {
+  color:white;
+  text-shadow: none;
+  animation: none;
+}
+
+.glowing-btn:hover .glowing-txt {
+  animation: none;
+}
+
+.glowing-btn:hover .faulty-letter {
+  animation: none;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.glowing-btn:hover:before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+
+.glowing-btn:hover:after {
+  opacity: 1;
+}
+
+@keyframes faulty-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 0.1;
+  }
+  4% {
+    opacity: 0.5;
+  }
+  19% {
+    opacity: 0.5;
+  }
+  21% {
+    opacity: 0.1;
+  }
+  23% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  83% {
+    opacity: 0.4;
+  }
+
+  87% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  8% {
+    opacity: 0.1;
+  }
+
+  9% {
+    opacity: 1;
+  }
+
+  12% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+  72% {
+    opacity: 0.2;
+  }
+
+  77% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes border-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.1;
+  }
+
+  8% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .glowing-btn{
+    font-size: 1em;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <button class="menu-button" id="menuButton" onclick="toggleMenu()">☰</button>
+    <nav class="navbar" id="navbar">
+        <br><br>
+        <a href="index.html">Home</a>
+        <a href="index.html">About Us</a>
+        <a href="#book">Book Now</a>
+        <div class="contact-details">
+            <p><i class="fas fa-envelope"></i></p>
+            <p><i class="fas fa-phone"></i></p>
+            <p><i class="fab fa-whatsapp"></i></p>
+            <p><i class="fab fa-facebook"></i></p>
+        </div>
+    </nav>
+    <div class="book">
+        <h2>Book Turf</h2>
+        <p>Please select an option:</p>
+        <button class='glowing-btn' onclick="showLogin()"><span class='glowing-txt'>L<span class='faulty-letter'>O</span>GIN</span></button>
+        <button class='glowing-btn' onclick="showSignup()"><span class='glowing-txt'>S<span class='faulty-letter'>IGN</span>UP</span></button>
+    </div>
+    <script>
+        function toggleMenu() {
+            var navbar = document.getElementById('navbar');
+            var menuButton = document.getElementById('menuButton');
+            navbar.classList.toggle('show');
+            if (navbar.classList.contains('show')) {
+                menuButton.innerHTML = 'x';
+            } else {
+                menuButton.innerHTML = '☰';
+            }
+        }
+
+        function showLogin() {
+            // Redirect to login page or display login form
+            window.location.href = "login.html";
+        }
+
+        function showSignup() {
+            // Redirect to signup page or display signup form
+            window.location.href = "signup.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Book Turf</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background:black;
+        }
+        .menu-button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 35px;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+            transition: background-color 0.3s;
+        }
+        .menu-button:hover {
+            background-color: #555;
+        }
+        .navbar {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: black;
+            padding-top: 60px;
+            z-index: 0;
+        }
+        .navbar a {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s;
+            font-size: 25px;
+        }
+        .navbar a:hover {
+            background-color: #e40d0d;
+            color: rgb(241, 232, 232);
+        }
+
+        .show {
+            display: flex;
+        }
+
+        .contact-details {
+            position: absolute;
+            bottom: 50px;
+            left: 10px;
+            color: white;
+            font-size: 30px;
+            display: flex;
+        }
+
+        .contact-details p {
+            margin-right: 10px;
+            margin-left: 5px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .contact-details p:hover .fa-envelope {
+            color: #d44638;
+        }
+        .contact-details p:hover .fa-phone {
+            color: #25d366;
+            transform: rotateY(180deg);
+        }
+        .contact-details p:hover .fa-whatsapp {
+            color: #25d366;
+        }
+        .contact-details p:hover .fa-facebook {
+            color: #3b5998;
+        }
+        .login-container {
+            width: 100%;
+            max-width: 400px; /* Increased size of the form */
+            margin: 180px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0px 10px 10px rgb(250, 247, 247);
+            border-radius: 10px;
+            position: relative; /* Added */
+        }
+        
+        .login-container h1 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+        
+        .login-container label {
+            margin-bottom: 10px;
+            font-size: 25px;
+            width: 100%; 
+            text-align: left; 
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
+        }
+        
+        .login-container input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #d41111;
+            border-radius: 5px;
+            font-size: 16px;
+            max-width: 300px; 
+            width: 100%; 
+        }
+        
+        .login-container button {
+            padding: 15px;
+            background: red;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+            max-width:150px; 
+            width: 100%; /* Make button responsive */
+        }
+        
+        .login-container button:hover {
+            background: #dd1411;
+        }
+        
+        .login-container .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';
+        }
+        
+        .login-container .footer a {
+            color: red;
+            text-decoration: none;
+
+        }
+        
+        .login-container .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-button" id="menuButton" onclick="toggleMenu()">☰</button>
+    <nav class="navbar" id="navbar">
+        <br><br>
+        <a href="index.html">Home</a>
+        <a href="index.html">About Us</a>
+        <a href="booknow.html">Book Now</a>
+        <div class="contact-details">
+            <p><i class="fas fa-envelope"></i></p>
+            <p><i class="fas fa-phone"></i></p>
+            <p><i class="fab fa-whatsapp"></i></p>
+            <p><i class="fab fa-facebook"></i></p>
+        </div>
+    </nav>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="/submit_login" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" class="small-input" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="footer">
+            <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            var navbar = document.getElementById('navbar');
+            var menuButton = document.getElementById('menuButton');
+            navbar.classList.toggle('show');
+            if (navbar.classList.contains('show')) {
+                menuButton.innerHTML = 'x';
+            } else {
+                menuButton.innerHTML = '☰';
+            }
+        }
+    </script>
+</body>
+</html>
